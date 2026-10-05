@@ -280,7 +280,7 @@ footer a{display:block;padding:5px 0;font-size:.92rem}
 
 <section id="about">
 <div class="wrap about">
-<div class="ab-img fade"><img src="CEO.png" alt="CEO of MR. A PERFUMES"></div>
+<div class="ab-img fade"><img src="CEO.jpg" alt="CEO of MR. A PERFUMES"></div>
 <div class="fade"><h2>More than a fragrance.<br>It's your signature.</h2>
 <p>MR. A PERFUMES is dedicated to bringing customers premium fragrances that match their personality, style, and presence. From everyday scents to special occasions, our collection is carefully selected to help you find a fragrance you will love.</p>
 <a href="#contact" class="btn fill">Talk to us</a></div>
@@ -331,25 +331,36 @@ footer a{display:block;padding:5px 0;font-size:.92rem}
 <script>
 const N='2347062359015';
 const $=s=>document.querySelector(s);
-const fmt=n=>'₦'+Number(n).toLocaleString('en-NG');
+const fmt=n=>n?'₦'+Number(n).toLocaleString('en-NG'):'Price on request';
 const wa=t=>'https://wa.me/'+N+'?text='+encodeURIComponent(t);
 
 /*
   IMAGE MAP
-  All image files are in the SAME folder as index.html.
+  All image files are in the SAME folder as this file.
   Change only the img: filename if you want a different photo.
 */
 const P=[
-{id:'surrati-classic',n:'Surrati Chanse',b:'Surrati',s:'100ml',p:20000,img:'chanse.png',c:'Unisex',f:['Oud','Woody'],h:32,r:4.8,t:'Saffron, Bergamot',he:'Rose, Amber',ba:'Oud, Sandalwood',d:'A confident oud-forward signature with warm saffron opening and a long, smooth dry-down.',fav:1},
-{id:'surrati-noir',n:'Surrati Noir',b:'Surrati',s:'100ml',p:78000,img:'irish_leather.png',c:"Men's",f:['Woody','Oriental'],h:28,r:4.9,t:'Black Pepper, Cardamom',he:'Leather, Cedar',ba:'Vetiver, Musk',d:'Deep and magnetic. Made for evenings and statement entrances.',fav:1},
-{id:'al-mass-royale',n:'Al Mass Royale',b:'Al Mass',s:'100ml',p:62000,img:'dubai_gold.png',c:'Unisex',f:['Sweet','Oriental'],h:40,r:4.7,t:'Pear, Pink Pepper',he:'Jasmine, Vanilla',ba:'Amber, Tonka',d:'Smooth, sweet and richly oriental with a refined creamy finish.',fav:1},
-{id:'al-mass-blanc',n:'Al Mass Blanc',b:'Al Mass',s:'50ml',p:38000,img:'pink_chiffon.png',c:"Women's",f:['Floral','Musk'],h:150,r:4.6,t:'Peony, Lychee',he:'White Rose, Iris',ba:'White Musk, Cashmere',d:'Soft, luminous florals wrapped in clean musk for everyday elegance.',fav:1},
-{id:'al-miftah-amber',n:'Al-Miftah Amber',b:'Al-Miftah',s:'50ml',p:35000,img:'turkey_oud.jpg',c:'Oud & Attar',f:['Oud','Sweet'],h:165,r:4.8,t:'Rose, Cinnamon',he:'Amber, Labdanum',ba:'Oud, Benzoin',d:'A concentrated attar-style oil with golden warmth and exceptional longevity.',fav:1},
-{id:'al-miftah-musk',n:'Al-Miftah White Musk',b:'Al-Miftah',s:'12ml',p:18000,img:'musk_dahara.png',c:'Oud & Attar',f:['Musk'],h:150,r:4.7,t:'Soft Aldehydes',he:'Lily, Powder',ba:'White Musk',d:'A clean, skin-close roll-on musk that lingers quietly all day.',fav:1},
-{id:'azure-citrus',n:'Azure Citrus',b:'Premium Select',s:'100ml',p:52000,img:'blue_horizon.jpg',c:"Men's",f:['Fresh','Citrus'],h:190,r:4.5,t:'Lemon, Grapefruit',he:'Mint, Neroli',ba:'Cedar, Ambergris',d:'Bright, crisp and energising. A refined daytime companion.',fav:1},
-{id:'velvet-rose',n:'Velvet Rose',b:'Premium Select',s:'75ml',p:68000,img:'pink_chiffon.png',c:"Women's",f:['Floral','Sweet'],h:345,r:4.8,t:'Raspberry, Bergamot',he:'Damask Rose, Peony',ba:'Patchouli, Vanilla',d:'Romantic and velvety, a modern rose with a gourmand heart.',fav:1},
-{id:'oud-incense',n:'Oud Incense Bakhoor',b:'Al-Miftah',s:'40g',p:22000,img:'manjoul.png',c:'Incense',f:['Oud','Woody'],h:35,r:4.6,t:'Smoke, Saffron',he:'Oud Chips',ba:'Resin, Amber',d:'Hand-blended bakhoor to scent your home with warm, smoky depth.'},
-{id:'home-mist',n:'Amber Home Mist',b:'Al Mass',s:'250ml',p:30000,img:'soft_perfume.png',c:'Home Fragrances',f:['Oriental','Sweet'],h:28,r:4.5,t:'Orange Blossom',he:'Amber',ba:'Vanilla, Musk',d:'A fine room and linen mist that fills a space with soft amber warmth.'}
+{id:'chanse',n:'Chanse',b:'Surrati',s:'100ml',p:20000,img:'chanse.jpg',c:'Unisex',f:['Oud', 'Woody'],h:32,r:4.8,t:'Saffron, Bergamot',he:'Rose, Amber',ba:'Oud, Sandalwood',d:'A confident oud-forward signature with warm saffron opening and a long, smooth dry-down.',fav:1},
+{id:'iresh-leather',n:'Iresh Leather',b:'Surrati',s:'100ml',p:78000,img:'iresh_leather.jpg',c:"Men's",f:['Woody', 'Oriental'],h:28,r:4.9,t:'Black Pepper, Cardamom',he:'Leather, Cedar',ba:'Vetiver, Musk',d:'Deep and magnetic. Made for evenings and statement entrances.',fav:1},
+{id:'dubai-gold',n:'Dubai Gold',b:'Almas',s:'6ml',p:62000,img:'dubai_gold.jpg',c:'Unisex',f:['Sweet', 'Oriental'],h:40,r:4.7,t:'Pear, Pink Pepper',he:'Jasmine, Vanilla',ba:'Amber, Tonka',d:'Smooth, sweet and richly oriental with a refined creamy finish.',fav:1},
+{id:'pink-chiffon',n:'Even Pink Chiffon',b:'Al Mass',s:'100ml',p:38000,img:'pink_chiffon.jpg',c:"Women's",f:['Floral', 'Musk'],h:150,r:4.6,t:'Peony, Lychee',he:'White Rose, Iris',ba:'White Musk, Cashmere',d:'Soft, luminous florals wrapped in clean musk for everyday elegance.',fav:1},
+{id:'turkey-oud',n:'Turkey Oud',b:'Naseem',s:'100ml',p:35000,img:'turkey_oud.jpg',c:'Oud & Attar',f:['Oud', 'Sweet'],h:165,r:4.8,t:'Rose, Cinnamon',he:'Amber, Labdanum',ba:'Oud, Benzoin',d:'A concentrated perfume oil with golden warmth and exceptional longevity.',fav:1},
+{id:'musk-tahara',n:'Musk Tahara',b:'Al-Miftah',s:'6ml',p:18000,img:'musk_tahara.jpg',c:'Oud & Attar',f:['Musk'],h:150,r:4.7,t:'Soft Aldehydes',he:'Lily, Powder',ba:'White Musk',d:'A clean, skin-close musk that lingers quietly all day.',fav:1},
+{id:'blue-horizon',n:'Blue Horizon',b:'Naseem',s:'100ml',p:52000,img:'blue_horizon.jpg',c:"Men's",f:['Fresh', 'Citrus'],h:190,r:4.5,t:'Lemon, Grapefruit',he:'Mint, Neroli',ba:'Cedar, Ambergris',d:'Bright, crisp and energising. A refined daytime companion.',fav:1},
+{id:'be-sugar',n:'Be Sugar',b:'Naseem',s:'100ml',p:68000,img:'be_sugar.jpg',c:"Women's",f:['Floral', 'Sweet'],h:345,r:4.8,t:'Raspberry, Bergamot',he:'Damask Rose, Peony',ba:'Patchouli, Vanilla',d:'Sweet and playful, a modern gourmand with a warm finish.',fav:1},
+{id:'manjol',n:'Manjol',b:'Surrati',s:'Perfume oil',p:22000,img:'manjol.jpg',c:'Oud & Attar',f:['Oud', 'Woody'],h:35,r:4.6,t:'Smoke, Saffron',he:'Oud Chips',ba:'Resin, Amber',d:'Manjol concentrated perfume oil. Message us on WhatsApp for price and availability.'},
+{id:'soft',n:'Soft',b:'Naseem',s:'100ml',p:30000,img:'soft.jpg',c:'Unisex',f:['Oriental', 'Sweet'],h:28,r:4.5,t:'Orange Blossom',he:'Amber',ba:'Vanilla, Musk',d:'Soft concentrated perfume oil. Message us on WhatsApp for price and availability.'},
+{id:'chocolate-musk',n:'Chocolate Musk',b:'Almas',s:'Perfume oil',p:0,img:'chocolate_musk.jpg',c:'Unisex',f:['Sweet', 'Musk'],h:20,r:4.5,t:'Top notes',he:'Heart notes',ba:'Base notes',d:'Chocolate Musk concentrated perfume oil. Message us on WhatsApp for price and availability.'},
+{id:'pares',n:'Pares',b:'Almas',s:'100g',p:0,img:'pares.jpg',c:'Unisex',f:['Oriental', 'Sweet'],h:40,r:4.5,t:'Top notes',he:'Heart notes',ba:'Base notes',d:'Pares concentrated perfume oil. Message us on WhatsApp for price and availability.'},
+{id:'amani',n:'Amani',b:'Naseem',s:'100ml',p:0,img:'amani.jpg',c:'Unisex',f:['Oriental'],h:30,r:4.5,t:'Top notes',he:'Heart notes',ba:'Base notes',d:'Amani concentrated perfume oil. Message us on WhatsApp for price and availability.'},
+{id:'mufaddal',n:'Mufaddal',b:'Naseem',s:'100ml',p:0,img:'mufaddal.jpg',c:'Unisex',f:['Woody'],h:30,r:4.5,t:'Top notes',he:'Heart notes',ba:'Base notes',d:'Mufaddal concentrated perfume oil. Message us on WhatsApp for price and availability.'},
+{id:'lamsa',n:'Lamsa',b:'Naseem',s:'100ml',p:0,img:'lamsa.jpg',c:"Women's",f:['Floral'],h:330,r:4.5,t:'Top notes',he:'Heart notes',ba:'Base notes',d:'Lamsa concentrated perfume oil. Message us on WhatsApp for price and availability.'},
+{id:'bushra',n:'Bushra',b:'Naseem',s:'100ml',p:0,img:'bushra.jpg',c:'Unisex',f:['Oud'],h:30,r:4.5,t:'Top notes',he:'Heart notes',ba:'Base notes',d:'Bushrah concentrated perfume oil. Message us on WhatsApp for price and availability.'},
+{id:'cool-weather',n:'Cool Weather',b:'Al-Miftah',s:'Perfume oil',p:0,img:'cool_weather.jpg',c:"Men's",f:['Fresh'],h:190,r:4.5,t:'Top notes',he:'Heart notes',ba:'Base notes',d:'Cool Weather concentrated perfume oil. Message us on WhatsApp for price and availability.'},
+{id:'wild-fawakeh',n:'Wild Fawakeh',b:'Almas',s:'100ml',p:0,img:'wild_fawakeh.jpg',c:"Women's",f:['Sweet', 'Floral'],h:350,r:4.5,t:'Top notes',he:'Heart notes',ba:'Base notes',d:'Wild Fawakeh concentrated perfume oil. Message us on WhatsApp for price and availability.'},
+{id:'terry-dmehres',n:'Terry D\'Mehres',b:'Al-Miftah',s:'100ml',p:0,img:'terry_dmehres.jpg',c:"Men's",f:['Woody'],h:30,r:4.5,t:'Top notes',he:'Heart notes',ba:'Base notes',d:'Terry D\'Mehres eau de parfum, a classic scent for modern men. Message us on WhatsApp for price and availability.'},
+{id:'dere-tmerhes',n:'Dere T\'Merhes',b:'Surrati',s:'100ml',p:0,img:'dere_tmerhes.jpg',c:'Oud & Attar',f:['Musk'],h:150,r:4.5,t:'Top notes',he:'Heart notes',ba:'Base notes',d:'Dere concentrated perfume oil. Message us on WhatsApp for price and availability.'}
+,{id:'buncarat-rouge-540',n:'Buncarat Rouge 540',b:'Almas',s:'Perfume oil',p:0,img:'buncarat_rouge_540.jpg',c:'Unisex',f:['Oriental','Sweet'],h:5,r:4.5,t:'Top notes',he:'Heart notes',ba:'Base notes',d:'Buncarat Rouge 540 concentrated perfume oil. Message us on WhatsApp for price and availability.'}
 ];
 
 const SC=['Fresh','Woody','Oud','Sweet','Floral','Musk','Citrus','Oriental'];
@@ -363,6 +374,9 @@ const sh=['M120 150h160v170q0 30-30 30H150q-30 0-30-30z','M130 140h140q20 0 20 2
 return `<svg viewBox="0 0 400 440"><defs><linearGradient id="g${u}" x1="0" x2="1"><stop offset="0" stop-color="${b}"/><stop offset=".55" stop-color="${a}"/><stop offset="1" stop-color="${a}" stop-opacity=".85"/></linearGradient></defs><ellipse cx="200" cy="378" rx="120" ry="14" fill="#2a2118" opacity=".16"/><path d="${sh}" fill="url(#g${u})" stroke="#fff6" stroke-width="1"/><path d="M148 190v110" stroke="#fff" stroke-opacity=".4" stroke-width="7" stroke-linecap="round"/><rect x="160" y="100" width="80" height="52" rx="4" fill="#B8955A"/><rect x="170" y="84" width="60" height="22" fill="#d8c08f"/><rect x="160" y="250" width="80" height="62" fill="#F6F0E4" opacity=".88"/><text x="200" y="278" text-anchor="middle" font-family="Georgia" font-size="12" letter-spacing="3" fill="#221C14">MR. A</text><text x="200" y="298" text-anchor="middle" font-size="7" letter-spacing="2" fill="#7A6E5C">PERFUMES</text></svg>`;
 }
 $('#heroSvg').innerHTML=`<g class="fl" transform="translate(-10 60) scale(.62)">${bot(36,0,'h1').replace(/<\/?svg[^>]*>/g,'')}</g><g class="fl fl2" transform="translate(130 0) scale(.8)">${bot(28,1,'h2').replace(/<\/?svg[^>]*>/g,'')}</g><g class="fl fl3" transform="translate(240 70) scale(.62)">${bot(18,2,'h3').replace(/<\/?svg[^>]*>/g,'')}</g>`;
+
+/* If an image file is missing or empty, show the bottle illustration instead */
+document.addEventListener('error',e=>{const t=e.target;if(t.tagName!=='IMG'||t.dataset.i===undefined)return;const i=+t.dataset.i,d=document.createElement('span');d.style.cssText='display:block;width:100%;height:100%';d.innerHTML=bot(P[i].h,i,'f'+Math.random().toString(36).slice(2,6));t.replaceWith(d)},true);
 
 /* State */
 let cart=[];
@@ -378,7 +392,7 @@ return `<article class="pc">
 <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-8.5-9A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8.5 4C19 15.5 12 20 12 20z"/></svg>
 </button>
 <div class="pimg" data-open="${p.id}">
-<img src="${p.img}" alt="${p.n}" loading="lazy">
+<img src="${p.img}" data-i="${idx(p)}" alt="${p.n}" loading="lazy">
 <span class="qv">Quick view</span>
 </div>
 <div class="pb">
@@ -434,7 +448,7 @@ const T=cart.reduce((s,i)=>s+i.q*P.find(p=>p.id===i.id).p,0);
 $('#cn').textContent=cart.reduce((s,i)=>s+i.q,0);
 $('#items').innerHTML=cart.map(i=>{
 const p=P.find(x=>x.id===i.id);
-return `<div class="ci"><div class="th"><img src="${p.img}" alt="${p.n}"></div><div><b class="serif" style="font-size:1.15rem">${p.n}</b><div class="meta" style="justify-content:flex-start;gap:8px">${p.s} · ${fmt(p.p)}</div><div class="qty"><button data-q="${i.id}:-1">−</button><span>${i.q}</span><button data-q="${i.id}:1">+</button></div></div><button class="ib" data-rm="${i.id}">✕</button></div>`;
+return `<div class="ci"><div class="th"><img src="${p.img}" data-i="${idx(p)}" alt="${p.n}"></div><div><b class="serif" style="font-size:1.15rem">${p.n}</b><div class="meta" style="justify-content:flex-start;gap:8px">${p.s} · ${fmt(p.p)}</div><div class="qty"><button data-q="${i.id}:-1">−</button><span>${i.q}</span><button data-q="${i.id}:1">+</button></div></div><button class="ib" data-rm="${i.id}">✕</button></div>`;
 }).join('')||'<p class="empty">Your bag is empty. Browse the collection to begin.</p>';
 
 const msg=`Hello Mr. A Perfumes, I would like to order:\n`+
@@ -454,11 +468,11 @@ const rel=P.filter(x=>x!==p&&(x.c===p.c||x.b===p.b||x.f.some(f=>p.f.includes(f))
 
 $('#pbody').innerHTML=`<div class="pgin">
 <div class="gal">
-<div class="main"><img src="${p.img}" alt="${p.n}"></div>
+<div class="main"><img src="${p.img}" data-i="${idx(p)}" alt="${p.n}"></div>
 <div class="thumbs">
-<button class="on" aria-label="Product image"><img src="${p.img}" alt="${p.n}"></button>
-<button aria-label="Product image"><img src="${p.img}" alt="${p.n}"></button>
-<button aria-label="Product image"><img src="${p.img}" alt="${p.n}"></button>
+<button class="on" aria-label="Product image"><img src="${p.img}" data-i="${idx(p)}" alt="${p.n}"></button>
+<button aria-label="Product image"><img src="${p.img}" data-i="${idx(p)}" alt="${p.n}"></button>
+<button aria-label="Product image"><img src="${p.img}" data-i="${idx(p)}" alt="${p.n}"></button>
 </div>
 </div>
 <div>
